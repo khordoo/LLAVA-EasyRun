@@ -5,12 +5,12 @@ import os
 
 
 st.session_state['send_clicked'] = False
-image_path = 'images/placeholder.jpg'
+image_path = './placeholder.jpg'
 default_image = Image.open(image_path)
 
 st.set_page_config(layout="wide", page_title="LlaVA")
 
-st.write("## LLaVA: Large Language and Vision Assistant")
+st.write("## LLaVA-GUI: Large Language and Vision Assistant")
 st.write(
     ""
 )

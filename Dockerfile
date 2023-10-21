@@ -1,17 +1,3 @@
-#FROM python:3.10-buster
-#RUN apt-get update \
-#    && DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends build-essential \
-#    && rm -rf /var/lib/apt/lists/*
-#WORKDIR /app
-#RUN git clone https://github.com/ggerganov/llama.cpp.git /app
-#RUN pip install -r requirements.txt
-#RUN make llava
-#RUN ls /app
-#CMD ["sleep","50000"]
-# Dockerfile to deploy a llama-cpp container with conda-ready environments
-
-# docker pull continuumio/miniconda3:latest
-
 ARG TAG=latest
 FROM continuumio/miniconda3:$TAG
 
@@ -81,6 +67,7 @@ RUN su - llama-cpp-user -c "cd ~/llama.cpp \
 # Copy GUI Streamlit application
 WORKDIR /home/llama-cpp-user/llama.cpp
 COPY app.py .
+COPY images/placeholder.jpg .
 EXPOSE 8501
 
 # Preparing for login
@@ -89,4 +76,3 @@ WORKDIR ${HOME}/llama.cpp
 USER llama-cpp-user
 ENTRYPOINT ["conda", "run", "--no-capture-output", "-n", "llamacpp", "streamlit","run", "app.py"]
 
-#CMD ["sleep","5000"]
