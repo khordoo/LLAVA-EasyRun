@@ -2,6 +2,8 @@
 
 **LLAVA-EasyRun** is a simplified setup for running the **LLAVA** project using Docker, designed to make it extremely easy for users to get started. It utilizes the **llama.cpp** for local CPU execution and comes with a custom, user-friendly GUI for a hassle-free interaction.
 
+Here is an overview of the GUI:
+![image](https://github.com/khordoo/LLAVA-EasyRun/assets/32692718/e9158068-5bdf-498d-be03-e3455fb9c1f0)
 ## Getting Started
 
 ### Prerequisites
